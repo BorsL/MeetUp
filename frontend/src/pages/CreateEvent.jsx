@@ -1,18 +1,19 @@
 import { useState } from "react";
+import { useProductStore } from "../store/event";
 
 const CreateEvent = () => {
   const [event, setNewEvent] = useState({
     name: "",
     price: "",
-    image: null, // image should be a file, so initialize with null
+    image: "", // image should be a file, so initialize with null
   });
 
-  const handleSubmit = (e) => {
+  const {createProduct} = useProductStore();
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("Name:", event.name);
-    console.log("Price:", event.price);
-    console.log("Image:", event.image); // Image will be a file object
-    // Add the logic to handle the data submission here
+    const {success, message} = await createProduct(event)
+    console.log("success:", success)
+    console.log("message:", message)
   };
 
   return (
@@ -68,11 +69,13 @@ const CreateEvent = () => {
             Event Image
           </label>
           <input
-            type="file"
+            type="text"
             id="image"
-            onChange={(e) => setNewEvent({ ...event, image: e.target.files[0] })}
+            value={event.image}
+            onChange={(e) => setNewEvent({ ...event, image: e.target.value })}
             className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            
+            placeholder="Enter image"
+            required
           />
         </div>
 
