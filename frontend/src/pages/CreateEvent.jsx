@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useProductStore } from "../store/event";
+import toast from "react-hot-toast";
 
 const CreateEvent = () => {
   const [event, setNewEvent] = useState({
@@ -12,8 +13,14 @@ const CreateEvent = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     const {success, message} = await createProduct(event)
-    console.log("success:", success)
-    console.log("message:", message)
+    if(!success){
+        console.log("not Success")
+        toast.error("Please fill in all fields!");
+    }else{
+        console.log("Success")
+        toast.success("Event created successfully! 🎉");
+    }
+    setNewEvent({name: "", price: "", image: ""})
   };
 
   return (
