@@ -24,7 +24,7 @@ const Navbar = () => {
     <div className="max-w-5xl px-4 mx-auto">
       <div className="flex items-center justify-between h-16 flex-col sm:flex-row">
         <h1 className="text-2xl sm:text-3xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 text-center">
-          <Link to="/">Product Store 🛒</Link>
+          <Link to="/">Create Event 🔥</Link>
         </h1>
         <div className="flex items-center space-x-2">
           <Link to="/create">

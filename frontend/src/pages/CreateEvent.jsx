@@ -76,7 +76,7 @@ const CreateEvent = () => {
             Event Image
           </label>
           <input
-            type="text"
+            type="img"
             id="image"
             value={event.image}
             onChange={(e) => setNewEvent({ ...event, image: e.target.value })}
