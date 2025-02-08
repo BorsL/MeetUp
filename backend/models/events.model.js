@@ -19,4 +19,5 @@ const eventSchema = new mongoose.Schema({
 
 const Event = mongoose.model('Event', eventSchema); //uppercase and singular cause mongo hanle it for you
 
+
 export default Event;
