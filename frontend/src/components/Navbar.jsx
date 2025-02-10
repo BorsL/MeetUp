@@ -28,10 +28,10 @@ const Navbar = () => {
           <Link to="/app">Create Event 🔥</Link>
         </h1>
         <div className="flex items-center space-x-2">
-          <Link to="/app/create">
-            <button className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
+          <Link to="/app/create"
+            className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
               <FaPlusSquare size={20} />
-            </button>
+            
           </Link>
           <button
             onClick={toggleTheme}
