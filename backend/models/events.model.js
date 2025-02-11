@@ -5,13 +5,33 @@ const eventSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    price:{
-        type: Number,
+    description:{
+        type: String,
         require: true,
+    },
+    location:{
+        name:{
+            type: String,
+            require: true,
+        },
+        link:{
+            type: String,
+        }
     },
     image:{
         type: String,
         require: true,
+    },
+    data:{
+        payable: {type: Boolean},
+        category: {
+            type: String,
+            enum: ["Technology", "Cars", "Music"],
+        },
+        partecipants: {
+            type: Number,
+            default: 0,
+        },
     }
 },{
     timestamps: true //createdAt, updatedAt each document

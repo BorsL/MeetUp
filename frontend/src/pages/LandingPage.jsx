@@ -5,9 +5,10 @@ const LandingPage = () => {
   return (  
     <div className="flex flex-col items-center justify-center h-screen">
         {/* Stylized Background */}
-        <div className="absolute top-10 left-10 w-24 h-24 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-30 rotate-12 rounded-lg blur-xl"></div>
-        <div className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-r from-green-400 to-blue-500 opacity-40 rotate-6 rounded-xl blur-2xl"></div>
-        <div className="absolute top-1/3 left-1/4 w-16 h-16 bg-gradient-to-r from-yellow-500 to-red-500 opacity-50 -rotate-12 rounded-lg blur-lg"></div>
+        <div className="absolute top-10 left-10 w-24 h-24 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-30 rotate-12 rounded-lg blur-xl animate-floating"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-r from-green-400 to-blue-500 opacity-40 rotate-6 rounded-xl blur-2xl animate-floating"></div>
+        <div className="absolute top-1/3 left-1/4 w-16 h-16 bg-gradient-to-r from-yellow-500 to-red-500 opacity-50 -rotate-12 rounded-lg blur-lg animate-floating"></div>
+
 
         {/* Main Content */}
         <div className="p-10 text-6xl text-white font-extrabold lg:text-8xl">

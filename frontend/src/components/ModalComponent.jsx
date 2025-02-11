@@ -2,7 +2,7 @@
 import React from 'react';
 
 const ModalComponent = ({ isOpen, onClose, title, children }) => {
-  if (!isOpen) return null; // Do not render if modal is not open
+  if (!isOpen) return null;
 
   return (
     <div className="modal modal-open">
@@ -15,7 +15,7 @@ const ModalComponent = ({ isOpen, onClose, title, children }) => {
           ✕
         </button>
         {/* Modal Title */}
-        {title && <h3 className="text-lg font-bold mb-4">{title}</h3>}
+        {title && <h3 className="text-slate-200 text-lg font-bold mb-4">{title}</h3>}
         {/* Modal Content */}
         {children}
       </div>

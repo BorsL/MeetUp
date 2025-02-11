@@ -4,7 +4,7 @@ export const useProductStore = create((set)=>({
     products: [], // const [state, useState] = useState([]) but in global state
     setProducts: (products) => set({products}),
     createProduct: async (newProduct) => {
-        if(!newProduct.name || !newProduct.price || !newProduct.image){
+        if(!newProduct.name || !newProduct.description || !newProduct.image || !newProduct.location.name){
             return {success: false, message: "Please insert all fields."}
         }
 

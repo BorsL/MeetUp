@@ -6,6 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        floating: "floating 4s ease-in-out infinite",
+      },
+      keyframes: {
+        floating: {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-20px) rotate(5deg)" },
+        },
+      },
       colors: {
         color1: "#fb8500", 
         color2: "#ffb703", 
@@ -14,7 +23,6 @@ export default {
         color5: "#8ecae6",
         color6: "#ffffff",
         color7: "#000000",
-
       },
     },
   },
