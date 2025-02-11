@@ -1,3 +1,15 @@
+/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Override DaisyUI's theme */
+[data-theme="dark"] {
+  --rounded-box: 1rem;
+  --rounded-btn: 0.5rem;
+  /* Add other customizations if needed */
+}

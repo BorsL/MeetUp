@@ -51,7 +51,7 @@ const SignUpPage = () => {
   return (
     <div className="flex min-h-screen bg-gray-900 text-white">
       {/* Left Side - Signup Form */}
-      <div className="w-1/2 flex flex-col justify-center items-center p-8">
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8">
         <h1 className="text-4xl font-bold text-teal-400 mb-6">Sign Up</h1>
         <form className="w-full max-w-md space-y-4" onSubmit={handleSubmit}>
           {/* Full Name Input */}
@@ -118,8 +118,8 @@ const SignUpPage = () => {
         </p>
       </div>
 
-      {/* Right Side - Event Description */}
-      <div className="w-1/2 flex flex-col justify-center items-center text-center bg-gray-800 p-8">
+      {/* Right Side - Event Description (Hidden on small screens) */}
+      <div className="hidden md:flex w-1/2 flex-col justify-center items-center text-center bg-gray-800 p-8">
         <h2 className="text-3xl font-bold mb-4 text-teal-400">Welcome to EventApp</h2>
         <p className="text-lg text-gray-300">
           Join our platform to explore and create amazing events with ease.
