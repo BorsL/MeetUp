@@ -38,11 +38,11 @@ app.use('/api/auth', authRoutes);
 // Production configuration
 if(process.env.NODE_ENV === "production") {
   // Serve static files
-  app.use(express.static(path.join(__dirname, "frontend/dist")));
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
   
   // Handle SPA routing
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
   });
 
   // Trust proxy for secure cookies
