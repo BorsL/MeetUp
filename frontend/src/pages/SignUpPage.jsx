@@ -3,7 +3,7 @@ import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { IoEyeOff, IoEye } from "react-icons/io5"; // Eye icons for password toggle
 import { useAuthStore } from "../store/useAuthStore";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom"; // For navigation to the login page
+import { Link, useNavigate } from "react-router-dom"; // For navigation to the login page
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +13,8 @@ const SignUpPage = () => {
     password: "",
   });
 
+
+  navigate = useNavigate()
   const { signUp, isSigningUp } = useAuthStore();
 
   const validateForm = () => {
@@ -45,6 +47,7 @@ const SignUpPage = () => {
     const success = validateForm();
     if (success === true) {
       signUp(formData);
+      Navigate('/app')
     }
   };
 
