@@ -14,7 +14,7 @@ const SignUpPage = () => {
   });
 
 
-  navigate = useNavigate()
+  const navigate = useNavigate()
   const { signUp, isSigningUp } = useAuthStore();
 
   const validateForm = () => {
@@ -47,7 +47,7 @@ const SignUpPage = () => {
     const success = validateForm();
     if (success === true) {
       signUp(formData);
-      Navigate('/app')
+      navigate('/app');
     }
   };
 
