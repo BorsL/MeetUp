@@ -17,19 +17,19 @@ const __dirname = path.resolve();
 app.use(express.json());
 app.use(cookieParser());
 
-// Enhanced CORS configuration
-const corsOptions = {
-  origin: [
-    process.env.CLIENT_URL, // Production URL
-    'http://localhost:5173' // Development URL
-  ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
 
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Handle preflight requests
+// const corsOptions = {
+//   origin: [
+//     process.env.CLIENT_URL, 
+//     'http://localhost:5173' 
+//   ],
+//   credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// };
+
+// app.use(cors(corsOptions));
+// app.options('*', cors(corsOptions)); 
 
 // Routes
 app.use('/api/products', productRoutes);
@@ -38,11 +38,11 @@ app.use('/api/auth', authRoutes);
 // Production configuration
 if(process.env.NODE_ENV === "production") {
   // Serve static files
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  app.use(express.static(path.join(__dirname, "/frontend/dist")));
   
   // Handle SPA routing
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
   });
 
   // Trust proxy for secure cookies
